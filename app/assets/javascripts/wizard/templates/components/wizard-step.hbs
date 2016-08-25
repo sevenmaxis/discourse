@@ -1,0 +1,20 @@
+{{#if step.title}}
+  <h1 class='wizard-step-title'>{{step.title}}</h1>
+{{/if}}
+
+{{#if step.description}}
+  <p class='wizard-step-description'>{{step.description}}</p>
+{{/if}}
+
+{{#wizard-step-form step=step}}
+  {{#each step.fields as |field|}}
+    {{wizard-field field=field}}
+  {{/each}}
+{{/wizard-step-form}}
+
+<div class='wizard-step-footer'>
+  <button class='wizard-next' {{action "nextStep"}} disabled={{saving}}>
+    {{i18n "wizard.next"}}
+    <i class='fa fa-chevron-right'></i>
+  </button>
+</div>

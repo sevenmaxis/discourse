@@ -1,9 +1,7 @@
 export default Ember.Route.extend({
   model(params) {
-    return {
-      id: params.step_id,
-      title: "You're a wizard harry!"
-    };
+    const allSteps = this.modelFor('application').steps;
+    return allSteps.findProperty('id', params.step_id);
   },
 
   setupController(controller, model) {
