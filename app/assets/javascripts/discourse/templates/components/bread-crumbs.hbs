@@ -4,6 +4,8 @@
   {{category-drop category=secondCategory parentCategory=firstCategory categories=childCategories subCategory="true" noSubcategories=noSubcategories}}
 {{/if}}
 
+{{plugin-outlet "bread-and-tee" tagNmae="li"}}
+
 {{#if siteSettings.tagging_enabled}}
   {{tag-drop firstCategory=firstCategory secondCategory=secondCategory tagId=tagId}}
 {{/if}}
